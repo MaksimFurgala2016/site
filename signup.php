@@ -32,6 +32,7 @@
             $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
             R::store($user);
             echo '<div style="color: green">Новый пользователь зарегистрирован!</div>';
+            header("location:control_site.php");
         }
         else {
             echo '<div style="color: red">'.array_shift($errors).'</div>';

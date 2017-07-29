@@ -17,7 +17,7 @@ require "db.php";
                 <a class="button" href="login.php">Войти</a>
             </div>
             <div class="eight columns nav">
-                <a class="button" href="#">Каталог</a>
+                <a class="button" href="index.php">Каталог</a>
                 <a class="button" href="#">О нас</a>
                 <a class="button" href="#">Контакты</a>
                 <a class="button" href="#">Форум</a>
