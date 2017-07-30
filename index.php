@@ -14,7 +14,9 @@ require "db.php";
         <div class="row">
             <div class="four columns">
                 <p class="logo">Моя компания</p>
-                <a class="button" href="login.php">Войти</a>
+                <a class="settings" href="control_site.php">
+                    <img src="content/icons/gear.png">
+                </a>
             </div>
             <div class="eight columns nav">
                 <a class="button" href="index.php">Каталог</a>

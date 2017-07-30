@@ -2,37 +2,54 @@
 require "db.php";
 if (isset($_SESSION['logged_user']))
 {
-?>
 
+?>
+<div class="control">
 <div >
-    <h1>Здравствуйте, <?php echo $_SESSION['logged_user']->email;  ?> </h1>
-    <a href="logout.php">Выйти</a>
+
+    <?php
+    //вытаскиваем имя через сессию
+    $list = $_SESSION['logged_user'];
+    $user = R::findOne('users', 'email = ?', array($list['email']));
+    ?>
+
+    <h1>Здравствуйте, <?php echo $user['name']  ?> </h1>
+    <a href="logout.php" class="button">Выйти</a>
+    <a href="index.php" class="button">На главную</a>
 </div>
-<?php
-//search users
-$data = R::findAll('users',"ORDER BY 'email' DESC");
-?>
 
-<div class="container">
-<div class="three columns">
 
-<?php foreach ($data as $user) {?>
 
+
+<div>
     <div class="row">
-            <?php echo $user->email?>
-        <a href="signup.php">
-            <img src="content/icons/plus.png">
-        </a>
-        <a href="edit_user.php">
-            <img src="content/icons/edit.png">
-        </a>
-            <a href="delete_user.php">
-                <img src="content/icons/trash.png">
+        <div class="three columns">
+            <ul>
+                <li>
+            <a href="signup.php" class="add">
+                <img src="content/icons/person.png">
+                ЛИЧНЫЕ ДАННЫЕ
             </a>
-    </div>
-    <?php }} ?>
-</div>
-</div>
-    <!--list by users-->
+                </li>
 
+                <li>
+            <a href="signup.php" class="add">
+                <img src="content/icons/plus.png">
+                ДОБАВИТЬ ТОВАР
+            </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nine columns">
+
+        </div>
 </div>
+</div>
+</div>
+<?php }
+else
+{
+    header("location: login.php");
+}
+?>

@@ -47,6 +47,56 @@ h2 {
     font-size: 2.5rem;
 }
 
+/********************CONTENT*********************/
+/*Добавление нового товара*/
+.three.columns {
+    text-decoration-line: none;
+
+}
+.three.columns a {
+    text-decoration-line: none;
+    color: #222222;
+
+}
+
+.three.columns li {
+    border: 1px solid;
+    margin: 2px;
+    background-color: #bbbbbb;
+    list-style: none;
+    padding: 2px 0 0 2px;
+}
+
+.add img {
+   left: auto;
+}
+.control {
+background-image: url("../content/images/control_page.jpg");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* стили для ширины крупнее мобильных */
 /* стили для ширины 400 пикселов и выше */

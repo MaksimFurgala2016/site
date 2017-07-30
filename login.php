@@ -1,8 +1,6 @@
 <?php
 require "db.php";
 $data = $_POST;
-
-
 if (isset($data['do_login'])) {
     $errors = array();//errors
     $user = R::findOne('users', 'email = ?', array($data['email']));
@@ -15,20 +13,14 @@ if (isset($data['do_login'])) {
         else {
             $errors[] = 'Неверно введен пароль!';
         }
-
     }
     else {
         $errors[] = 'Пользователь с таким e-mail не существует!';
     }
-
     if (! empty($errors)) {
         echo 'Неверно введен e-mail или пароль!';
     }
-
-
 }
-
-
 ?>
 
 <form action="login.php" method="POST">
